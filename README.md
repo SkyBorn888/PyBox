@@ -14,7 +14,7 @@ Linuxディストリビューション上でしか動かない。
 - Python >> [pip](https://pip.pypa.io/en/stable/)
 
 ## Contributing
-Pydoをより使いやすくするために共に開発してくれる人を大歓迎しています。Pull request, Issueを使ってバグや拡張機能のコードなどを書いてもらえると嬉しいです。
+Pydoをより使いやすくするために共に開発してくれる人を大歓迎しています。バグをissueに書いてもらえると嬉しいです。
 
 ## Example
 
