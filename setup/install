@@ -1,0 +1,142 @@
+#!/bin/bash
+
+### Error check
+
+set -x
+function error_handler() {
+  echo "ERROR" >&2
+  exit 1
+}
+echo ' '
+echo '### Install ###'
+echo ' '
+#cd `dirname $0`
+
+ver='py'
+ver2='py2'
+ver3='py3'
+
+export PATH=$HOME/Pydo/pydoenv/bin:$PATH
+export PATH=$HOME/Pydo:$PATH
+
+if [ -f /usr/bin/sudo ]; then
+  #sudo ln -si ~/Pydo/pydo /usr/local/bin
+  sudo cp ~/Pydo/pydo /usr/bin
+elif [ -e /usr/bin/sudo ]; then
+  cp ~/Pydo/pydo /usr/bin
+  #ln -si ~/Pydo/pydo /usr/local/bin
+else
+  echo ' '
+  echo '### wait a next update ###'
+  echo ' '
+  exit 1
+fi
+
+### python2 has already finished support for pip ###
+
+#if [ $1 == ${ver2} ]; then
+#
+#  if [ -f /usr/bin/python2 ]; then
+#    
+#    if [ -f /usr/bin/sudo ]; then
+#      sudo apt install python2-venv python2-pip
+#      python2 -m venv pydoenv
+#      echo '### complete ###'
+#      exit 1
+#    elif [ -e /usr/bin/sudo ]; then
+#      apt install python2-venv python2-pip
+#      python2 -m venv pydoenv
+#      echo '### complete ###'
+#      exit 1
+#    else
+#      echo ' '
+#      echo '### wait a next update ###'
+#      echo ' '
+#      exit 1
+#    fi
+#  elif [ -e /usr/bin/python2 ]; then
+#    echo 'python2 is not defind'
+#    exit 1
+#  else
+#    echo ' '
+#    echo '### wait a next update ###'
+#    echo ' '
+#    exit 1
+#  fi
+
+if [ $1 == ${ver2} ]; then
+
+  echo ' '
+  echo 'python2 has already finished support for pip'
+  echo ' '
+
+elif [ $1 == ${ver3} ]; then
+
+  if [ -f /usr/bin/python3 ]; then
+    
+    if [ -f /usr/bin/sudo ]; then
+
+      sudo apt-get install -y python3-venv python3-pip
+      echo 'Maiking.......'
+      python3 -m venv pydoenv ~/Pydo/pydoenv
+
+      exit 1
+
+    elif [ -e /usr/bin/sudo ]; then
+      apt-get install -y python3-venv python3-pip
+      echo 'Maiking.......'
+      python3 -m venv pydoenv ~/Pydo/pydoenv
+
+      exit 1
+
+    else
+      echo ' '
+      echo '### wait a next update ###'
+      echo ' '
+      exit 1
+
+    fi
+
+  elif [ -e /usr/bin/python3 ]; then
+    echo 'python3 is not defind'
+    exit 1
+  else
+    echo ' '
+    echo '### wait a next update ###'
+    echo ' '
+    exit 1
+  fi
+if [ $1 == ${ver} ]; then
+  if [ -f /usr/bin/python ]; then
+    if [ -f /usr/bin/sudo ]; then
+      sudo apt-get install python-venv python-pip
+      echo 'Maiking.......'
+      python -m venv pydoenv ~/Pydo/pydoenv
+
+      exit 1
+    elif [ -e /usr/bin/sudo ]; then
+      apt install python-venv python-pip
+      echo 'Maiking.......'
+      python -m venv pydoenv ~/Pydo/pydoenv
+
+      exit 1
+    else
+      echo '### Maybe your default python command use a python2 '
+      echo '### wait a next update ###'
+      echo ' '
+      exit 1
+    fi
+
+  elif [ -e /usr/bin/python ]; then
+    echo ' '
+    echo 'python is not defind'
+    echo ' '
+    exit 1
+  else
+    echo ' '
+    echo '### wait a next update ###'
+    echo ' '
+    exit 1
+  fi
+  fi
+fi

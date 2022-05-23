@@ -1,0 +1,24 @@
+#!/bin/bash
+
+### ERROR check
+
+#et -x
+#unction error_handler() {
+# echo "ERROR" >&2
+# exit 1
+#
+
+echo ' '
+echo '### Welcome to pydo ###'
+echo ' '
+cd `dirname $0`
+
+which sudo >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+	sudo ~/Pydo/pydoenv/bin/python $1 $2 $3
+	exit 1
+elif [ ! $? -eq 0 ]; then
+	~/Pydo/pydoenv/bin/python $1 $2 $3
+	exit 1
+fi
+

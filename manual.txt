@@ -1,0 +1,18 @@
+###################
+# Welcome to Pydo #
+###################
+
+python3 setup.py :
+
+First argument
+[ install ] <- Start install
+    Second argument
+    [ py3 ] <- python version 3.~
+    [ py ] <- python <- using default python version
+    * Python has already finished support for pip. So you can't use python2
+
+[ uninstall] <- Start uninstall
+
+[ status] <- Check version of pydoenv
+
+[ manual ]  <- Open a manual
