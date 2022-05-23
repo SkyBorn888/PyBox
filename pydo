@@ -2,8 +2,8 @@
 
 ### ERROR check
 
-#et -x
-#unction error_handler() {
+#set -x
+#function error_handler() {
 # echo "ERROR" >&2
 # exit 1
 #
