@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -x
+function error_handler() {
+  echo "ERROR" >&2
+  exit 1
+}
+
+echo '### Uninstall ###'
+
+#cd `dirname $0`
+
+if [ -e $FILE ]; then
+  echo "File exists."
+fi
+
+unset PATH=$HOME/Pydo/pydoenv/bin:$PATH
+unset PATH=$HOME/Pydo:$PATH
+
+which sudo >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+	sudo rm -rf /usr/bin/pydo
+elif [ ! $? -eq 0 ]; then
+	rm -rf /usr/bin/pydo
+else
+    echo '### complete ###'
+fi
+
+echo '### complete ###'
