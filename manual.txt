@@ -2,10 +2,19 @@
 # Welcome to Pydo #
 ###################
 
+First:
+
+You need a settings files permission.
+Run this under commands.
+
+chmod 755 ~/Pydo/setup.py ~/Pydo/pydo ~/Pydo/setup/install ~/Pydo/setup/uninstall
+
+
 python3 setup.py :
 
 First argument
 [ install ] <- Start install
+
     Second argument
     [ py3 ] <- python version 3.~
     [ py ] <- python <- using default python version
@@ -16,3 +25,32 @@ First argument
 [ status] <- Check version of pydoenv
 
 [ manual ]  <- Open a manual
+
+
+
+#### About pydo commands ####
+
+pydo commands[-p, run]  options[]:
+
+
+commands
+
+[ run ] <- run a file
+
+    Second argument
+    [ file ] <- python file
+    
+    example
+    
+    pydo run file.py
+
+options
+[ -p ] <- you can use pip
+
+    Second argument
+    - same pip arguments
+
+
+    example 
+    
+    pydo -p freeze

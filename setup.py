@@ -1,4 +1,3 @@
-from ast import arg
 import os
 import sys
 
@@ -37,7 +36,7 @@ def Uninstall():
 
     os.system('~/Pydo/setup/uninstall')
 
-    print('\n ### complete ### \n') 
+    #print('\n ### complete ### \n') 
     sys.exit()
 
 ### what venv using version of python
@@ -53,9 +52,11 @@ def Status():
         print("")
         print("Please wait a update")
         
-def Manual():
+def Manual(): 
     f = open('manual.txt', 'r', encoding='UTF-8')
-    print(f)
+    words = f.read() ##feature/Update-2
+    print(words)
+    f.close()
 
 
 try:
@@ -69,7 +70,7 @@ try:
     elif str(args[1]) == status:
         Status()
     
-    elif str(arg[1]) == manual:
+    elif str(args[1]) == manual:
         Manual()
     else:
         Manual()
