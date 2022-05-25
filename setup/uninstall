@@ -19,9 +19,11 @@ unset PATH=$HOME/Pydo:$PATH
 
 which sudo >/dev/null 2>&1
 if [ $? -eq 0 ]; then
-	sudo rm -rf /usr/bin/pydo
+	sudo rm -rf /usr/bin/pydo  #remove command
+	sudo rm -rf ~/Pydo/pydoenv #remove venv
 elif [ ! $? -eq 0 ]; then
 	rm -rf /usr/bin/pydo
+	rm -rf /Pydo/pydoenv
 else
     echo '### complete ###'
 fi

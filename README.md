@@ -6,7 +6,7 @@
 現時点では、独自に仮想環境を作成する。また、一つの仮想環境しか扱えない
 
 ## Dependencies
-Linuxディストリビューション上でしか動かない。
+Linuxディストリビューション、macOSでしか動かない。
 また、以下にあるPythonの機能、ライブラリに依存してある。
 
 - Python >> [venv](https://docs.python.org/ja/3/library/venv.html)
@@ -16,41 +16,106 @@ Linuxディストリビューション上でしか動かない。
 ## Contributing
 Pydoをより使いやすくするために共に開発してくれる人を大歓迎しています。バグをissueに書いてもらえると嬉しいです。
 
-## Example
+
+## Building
+
+インストールを始める前にファイルの権限を与えてください
+
+Give a permission
+```
+chmod 755 ~/Pydo/setup.py ~/Pydo/pydo ~/Pydo/setup/install ~/Pydo/setup/uninstall
+
+```
 
 Install
 ```command
 python3 setup.py install py3
+or
 python setup.py install py
 ```
 uninstall 
 ```command
 python3 setup.py uninstall
+or
 python setup.py uninstall
 ```
+
+## Example
+
+Setup.py arguments
+
 Check version of pydoenv
 ```command
 python3 setup.py status
+or
 python setup.py status
 ```
+
+See manuals
+```command
+python3 setup.py manual
+or
+python setup.py manual
+```
+
+
+
+
 RUN
 ```command
-pydo file.py        #run python file
-pydo -m pip freeze  #use pip
+pydo run file.py        #run python file
+```
+
+Using pip
+```command
+pydo -p freeze          #use pip
 ```
 
 ## Argument
-python3 setup.py ~ ~:
 
-First argument
+***Python has already finished support for pip. So you can't use python2***
+
+python3 setup.py :
+
+commands
 [ install ] <- Start install
-    Second argument
+
+    [install options]
     [ py3 ] <- python version 3.~
     [ py ] <- python <- using default python version
-  ***Python has already finished support for pip. So you can't use python2***
+    * Python has already finished support for pip. So you can't use python2
 
 [ uninstall] <- Start uninstall
 
 [ status] <- Check version of pydoenv
 
 [ manual ]  <- Open a manual
+
+
+
+##############################################################################
+
+pydo commands[-p, run]  options[]:
+
+
+commands
+
+[ run ] <- run a file
+
+    Second argument
+    [ file ] <- python file
+    
+    example
+    
+    pydo run file.py
+
+options
+[ -p ] <- you can use pip
+
+    Second argument
+    - same pip arguments
+
+
+    example 
+    
+    pydo -p freeze

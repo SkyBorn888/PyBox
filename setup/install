@@ -21,9 +21,9 @@ export PATH=$HOME/Pydo:$PATH
 
 if [ -f /usr/bin/sudo ]; then
   #sudo ln -si ~/Pydo/pydo /usr/local/bin
-  sudo cp ~/Pydo/pydo /usr/bin
+  sudo cp ~/Pydo/pydo /usr/bin/
 elif [ -e /usr/bin/sudo ]; then
-  cp ~/Pydo/pydo /usr/bin
+  cp ~/Pydo/pydo /usr/bin/
   #ln -si ~/Pydo/pydo /usr/local/bin
 else
   echo ' '
@@ -77,14 +77,18 @@ elif [ $1 == ${ver3} ]; then
     if [ -f /usr/bin/sudo ]; then
 
       sudo apt-get install -y python3-venv python3-pip
+      echo ' '
       echo 'Maiking.......'
+      echo ' '
       python3 -m venv pydoenv ~/Pydo/pydoenv
 
       exit 1
 
     elif [ -e /usr/bin/sudo ]; then
       apt-get install -y python3-venv python3-pip
+      echo ' '
       echo 'Maiking.......'
+      echo ' '
       python3 -m venv pydoenv ~/Pydo/pydoenv
 
       exit 1
@@ -117,7 +121,7 @@ if [ $1 == ${ver} ]; then
     elif [ -e /usr/bin/sudo ]; then
       apt install python-venv python-pip
       echo 'Maiking.......'
-      python -m venv pydoenv ~/Pydo/pydoenv
+      python -m venv pydoenv #~/Pydo/pydoenv
 
       exit 1
     else
