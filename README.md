@@ -1,5 +1,9 @@
 # Pydo
 
+現状ホームディレクトリにしか作動しないので以下の通りに配置してください
+### /home/username/Pydo/README.md
+
+
 ## Description
 システム上にPythonが動作する仮想的な環境を作るvenvをsudo[superuser do / substitute user do]　の権限を持った状態かつ、active状態にせず実行することができるツール
 
