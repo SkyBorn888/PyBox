@@ -6,7 +6,7 @@
 現時点では、独自に仮想環境を作成する。また、一つの仮想環境しか扱えない
 
 ## Dependencies
-Linuxディストリビューション、macOSでしか動かない。
+DebianベースのLinuxディストリビューションでしか動かない。
 また、以下にあるPythonの機能、ライブラリに依存してある。
 
 - Python >> [venv](https://docs.python.org/ja/3/library/venv.html)
