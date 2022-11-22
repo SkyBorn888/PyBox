@@ -1,7 +1,8 @@
-# Pydo
+# PyBox
 
 現状ホームディレクトリにしか作動しないので以下の通りに配置してください
-### /home/username/Pydo/README.md
+Currently it only works in the home directory, so please place it as follows
+### /home/username/PyBox/README.md
 
 
 ## Description
@@ -9,25 +10,31 @@
 
 現時点では、独自に仮想環境を作成する。また、一つの仮想環境しか扱えない
 
+A tool that allows you to run venv, which creates a virtual environment for Python to run on your system, with sudo[superuser do / substitute user do] privileges and without being in the active state.
+
+At present, it creates its own virtual environment. Also, it can only handle one virtual environment.
+
 ## Dependencies
 DebianベースのLinuxディストリビューションでしか動かない。
 また、以下にあるPythonの機能、ライブラリに依存してある。
+
+It only runs on Debian-based Linux distributions.
+It also depends on the Python features and libraries listed below.
 
 - Python >> [venv](https://docs.python.org/ja/3/library/venv.html)
   
 - Python >> [pip](https://pip.pypa.io/en/stable/)
 
 ## Contributing
-Pydoをより使いやすくするために共に開発してくれる人を大歓迎しています。バグをissueに書いてもらえると嬉しいです。
-
+PyBoxをより使いやすくするために共に開発してくれる人を大歓迎しています。バグをissueに書いてもらえると嬉しいです。
+We welcome anyone who is willing to develop with us to make PyBox easier to use.
 
 ## Building
 
 インストールを始める前にファイルの権限を与えてください
-
 Give a permission
 ```
-chmod 755 ~/Pydo/setup.py ~/Pydo/pydo ~/Pydo/setup/install ~/Pydo/setup/uninstall
+chmod 755 ~/PyBox/setup.py ~/PyBox/pybox ~/PyBox/setup/install ~/PyBox/setup/uninstall
 
 ```
 
@@ -44,11 +51,11 @@ or
 python setup.py uninstall
 ```
 
-## Example
+## Examples
 
 Setup.py arguments
 
-Check version of pydoenv
+Check version of pyboxenv
 ```command
 python3 setup.py status
 or
@@ -67,12 +74,12 @@ python setup.py manual
 
 RUN
 ```command
-pydo run file.py        #run python file
+pybox run file.py        #run python file
 ```
 
 Using pip
 ```command
-pydo -p freeze          #use pip
+pybox -p freeze          #use pip
 ```
 
 ## Argument
@@ -91,7 +98,7 @@ commands
 
 [ uninstall] <- Start uninstall
 
-[ status] <- Check version of pydoenv
+[ status] <- Check version of pyboxenv
 
 [ manual ]  <- Open a manual
 
@@ -99,7 +106,7 @@ commands
 
 ##############################################################################
 
-pydo commands[-p, run]  options[]:
+pybox commands[-p, run]  options[]:
 
 
 commands
@@ -111,7 +118,7 @@ commands
     
     example
     
-    pydo run file.py
+    pybox run file.py
 
 options
 [ -p ] <- you can use pip
@@ -122,4 +129,4 @@ options
 
     example 
     
-    pydo -p freeze
+    pybox -p freeze
