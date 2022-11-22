@@ -11,13 +11,13 @@
 
 ##need a seconds argument
 if [ -z $2 ]; then
-	cat ~/Pydo/manual.txt
+	cat ~/PyBox/manual.txt
 	exit 1
 fi
 
 
 echo ' '
-echo '### Welcome to pydo ###'
+echo '### Welcome to PyBox ###'
 echo ' '
 #cd `dirname $1`
 
@@ -36,12 +36,12 @@ if [ $1 == $rt1 ]; then # pip can use pip
 
 	which sudo >/dev/null 2>&1
 	if [ $? -eq 0 ]; then
-		sudo ~/Pydo/pydoenv/bin/python -m pip  ${@:2} 	#read from second arguments
+		sudo ~/PyBox/pyboxenv/bin/python -m pip  ${@:2} 	#read from second arguments
 		echo ' '
 		echo '### Done ###'
 		echo ' '
 	elif [ ! $? -eq 0 ]; then
-		~/Pydo/pydoenv/bin/python -m pip ${@:2}
+		~/PyBox/pyboxenv/bin/python -m pip ${@:2}
 		echo ' '
 		echo '### Done ###'
 		echo ' '
@@ -53,14 +53,14 @@ elif [ $1 == $rt2 ]; then
 
 	which sudo >/dev/null 2>&1
 	if [ $? -eq 0 ]; then
-		sudo ~/Pydo/pydoenv/bin/python  $path
+		sudo ~/PyBox/pyboxenv/bin/python  $path
 	elif [ ! $? -eq 0 ]; then
-		~/Pydo/pydoenv/bin/python $path
+		~/PyBox/pyboxenv/bin/python $path
 		exit 1
 	fi
 
 else
-	cat ~/Pydo/manual.txt
+	cat ~/PyBox/manual.txt
 fi
 
 

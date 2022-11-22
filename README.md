@@ -44,9 +44,9 @@ chmod 755 ~/PyBox/setup.py ~/PyBox/pybox ~/PyBox/setup/install ~/PyBox/setup/uni
 
 Install
 ```command
-python3 setup.py install py3
+python3 setup.py install version-3
 or
-python setup.py install py
+python setup.py install version-default
 ```
 uninstall 
 ```command

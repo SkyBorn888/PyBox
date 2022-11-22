@@ -1,9 +1,9 @@
 import os
 import sys
 
-ver3 = 'py3'
-ver2 = 'py2'
-ver = 'py'
+ver3 = 'version-3'
+ver2 = 'version-2'
+ver = 'version-default'
 uninstall = 'uninstall'
 install = 'install'
 args = sys.argv
@@ -17,14 +17,14 @@ def Install(ver2, ver3):
 
     if args[2] == ver2:
             print('python2 setup')
-            os.system('~/Pydo/setup/install py2')
+            os.system('~/PyBox/setup/install version-2')
 
     elif args[2] == ver3:
             print('python3 setup')
-            os.system('~/Pydo/setup/install py3')
+            os.system('~/PyBox/setup/install version-3')
     elif args[2] == ver:
             print('python setup')
-            os.system('~/Pydo/setup/install py')
+            os.system('~/PyBox/setup/install version-default')
 
     print('\n ### Done ### \n')
     sys.exit()
@@ -34,7 +34,7 @@ def Install(ver2, ver3):
 
 def Uninstall():
 
-    os.system('~/Pydo/setup/uninstall')
+    os.system('~/PyBox/setup/uninstall')
 
     #print('\n ### complete ### \n') 
     sys.exit()
@@ -42,8 +42,8 @@ def Uninstall():
 ### what venv using version of python
 
 def Status():
-    isthere3 = os.path.isfile("~/Pydo/pydoenv/bin/python3")
-    isthere2 = os.path.isfile("~/Pydo/pydoenv/bin/python2")
+    isthere3 = os.path.isfile("~/PyBox/pyboxenv/bin/python3")
+    isthere2 = os.path.isfile("~/PyBox/pyboxenv/bin/python2")
     if isthere3 == True:
         print("python3")
     elif isthere2 == True:

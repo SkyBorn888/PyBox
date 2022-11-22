@@ -12,19 +12,19 @@ echo '### Install ###'
 echo ' '
 #cd `dirname $0`
 
-ver='py'
-ver2='py2'
-ver3='py3'
+ver='version-default'
+ver2='version-2'
+ver3='version-3'
 
-export PATH=$HOME/Pydo/pydoenv/bin:$PATH
-export PATH=$HOME/Pydo:$PATH
+export PATH=$HOME/PyBox/pydoenv/bin:$PATH
+export PATH=$HOME/PyBox:$PATH
 
 if [ -f /usr/bin/sudo ]; then
-  #sudo ln -si ~/Pydo/pydo /usr/local/bin
-  sudo cp ~/Pydo/pydo /usr/bin/
+  #sudo ln -si ~/PyBox/pybox /usr/local/bin
+  sudo cp ~/PyBox/pybox /usr/bin/
 elif [ -e /usr/bin/sudo ]; then
-  cp ~/Pydo/pydo /usr/bin/
-  #ln -si ~/Pydo/pydo /usr/local/bin
+  cp ~/PyBox/pybox /usr/bin/
+  #ln -si ~/PyBox/pybox /usr/local/bin
 else
   echo ' '
   echo '### wait a next update ###'
@@ -40,12 +40,12 @@ fi
 #    
 #    if [ -f /usr/bin/sudo ]; then
 #      sudo apt install python2-venv python2-pip
-#      python2 -m venv pydoenv
+#      python2 -m venv pyboxenv
 #      echo '### complete ###'
 #      exit 1
 #    elif [ -e /usr/bin/sudo ]; then
 #      apt install python2-venv python2-pip
-#      python2 -m venv pydoenv
+#      python2 -m venv pyboxenv
 #      echo '### complete ###'
 #      exit 1
 #    else
@@ -80,7 +80,7 @@ elif [ $1 == ${ver3} ]; then
       echo ' '
       echo 'Maiking.......'
       echo ' '
-      python3 -m venv pydoenv ~/Pydo/pydoenv
+      python3 -m venv pyboxenv ~/PyBox/pyboxenv
 
       exit 1
 
@@ -89,7 +89,7 @@ elif [ $1 == ${ver3} ]; then
       echo ' '
       echo 'Maiking.......'
       echo ' '
-      python3 -m venv pydoenv ~/Pydo/pydoenv
+      python3 -m venv pyboxenv ~/PyBox/pyboxenv
 
       exit 1
 
@@ -115,13 +115,13 @@ if [ $1 == ${ver} ]; then
     if [ -f /usr/bin/sudo ]; then
       sudo apt-get install python-venv python-pip
       echo 'Maiking.......'
-      python -m venv pydoenv ~/Pydo/pydoenv
+      python -m venv pyboxenv ~/PyBox/pyboxenv
 
       exit 1
     elif [ -e /usr/bin/sudo ]; then
       apt install python-venv python-pip
       echo 'Maiking.......'
-      python -m venv pydoenv #~/Pydo/pydoenv
+      python -m venv pyboxenv #~/PyBox/pyboxenv
 
       exit 1
     else
