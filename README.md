@@ -44,6 +44,7 @@ chmod +x ~/PyBox/setup.py ~/PyBox/pybox ~/PyBox/setup/install ~/PyBox/setup/unin
 
 #### macOS
 もし、macOSのパソコンでしたら .bash_profile に下記を書き加えてください
+
 If your computer's OS is macOS, Apped to .bash_profile
 ```
 export PATH=$HOME/PyBox/pyboxenv/bin:$PATH
@@ -107,8 +108,8 @@ commands
 [ install ] <- Start install
 
     [install options]
-    [ py3 ] <- python version 3.~
-    [ py ] <- python <- using default python version
+    [ version-3 ] <- python version 3.~
+    [ version-default ] <- python <- using default python version
     * Python has already finished support for pip. So you can't use python2
 
 [ uninstall] <- Start uninstall
