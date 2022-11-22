@@ -53,5 +53,4 @@ options
 
     example 
     
-    pybox -p freeze
-
+    pybox -p interactive 
