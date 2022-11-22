@@ -28,12 +28,14 @@ It also depends on the Python features and libraries listed below.
 - Python >> [pip](https://pip.pypa.io/en/stable/)
 
 ## Contributing
-PyBoxをより使いやすくするために共に開発してくれる人を大歓迎しています。バグをissueに書いてもらえると嬉しいです。
+PyBoxをより使いやすくするために共に開発してくれる人を大歓迎しています。
+
 We welcome anyone who is willing to develop with us to make PyBox easier to use.
 
 ## Building
 
 インストールを始める前にファイルの権限を与えてください
+
 Give a permission
 ```
 chmod 755 ~/PyBox/setup.py ~/PyBox/pybox ~/PyBox/setup/install ~/PyBox/setup/uninstall
