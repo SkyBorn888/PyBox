@@ -11,21 +11,24 @@ echo '### Uninstall ###'
 #cd `dirname $0`
 
 if [ -e $FILE ]; then
-  echo "File exists."
+	echo "File exists."
 fi
 
-unset PATH=$HOME/Pydo/pydoenv/bin:$PATH
-unset PATH=$HOME/Pydo:$PATH
+unset PATH=$HOME/PyBox/pyboxenv/bin:$PATH
+unset PATH=$HOME/PyBox:$PATH
 
 which sudo >/dev/null 2>&1
 if [ $? -eq 0 ]; then
-	sudo rm -rf /usr/bin/pydo  #remove command
-	sudo rm -rf ~/Pydo/pydoenv #remove venv
+	sudo rm -rf /usr/bin/pybox  #remove command
+	sudo rm -rf ~/PyBox/pyboxenv #remove venv
 elif [ ! $? -eq 0 ]; then
-	rm -rf /usr/bin/pydo
-	rm -rf /Pydo/pydoenv
+	rm -rf /usr/bin/pybox
+	rm -rf /PyBox/pyboxenv
 else
     echo '### complete ###'
 fi
-
+echo ' '
+echo ' If your computer is macOS, You need delete environment variable'
+echo ' Edit .bash_profile and Delete environment variables related to pybox'
+echo ' '
 echo '### complete ###'

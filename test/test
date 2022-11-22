@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+if [ -f /usr/bin/sudo ]; then
+    sudo cp ~/PyBox/test/test ~/PyBox/setup
+else
+    echo ' '
+    echo '### wait a next update ###'
+    echo ' '
+    exit 1
+fi

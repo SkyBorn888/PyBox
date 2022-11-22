@@ -1,5 +1,5 @@
 ###################
-# Welcome to Pydo #
+# Welcome to PyBox #
 ###################
 
 First:
@@ -7,7 +7,7 @@ First:
 You need a settings files permission.
 Run this under commands.
 
-chmod 755 ~/Pydo/setup.py ~/Pydo/pydo ~/Pydo/setup/install ~/Pydo/setup/uninstall
+chmod 755 ~/PyBox/setup.py ~/PyBox/pybox ~/PyBox/setup/install ~/PyBox/setup/uninstall
 
 
 python3 setup.py :
@@ -22,15 +22,15 @@ First argument
 
 [ uninstall] <- Start uninstall
 
-[ status] <- Check version of pydoenv
+[ status] <- Check version of pyboxenv
 
 [ manual ]  <- Open a manual
 
 
 
-#### About pydo commands ####
+#### About PyBox commands ####
 
-pydo commands[-p, run]  options[]:
+PyBox commands[-p, run]  options[]:
 
 
 commands
@@ -42,7 +42,7 @@ commands
     
     example
     
-    pydo run file.py
+    pybox run file.py
 
 options
 [ -p ] <- you can use pip
@@ -53,4 +53,5 @@ options
 
     example 
     
-    pydo -p freeze
+    pybox -p freeze
+

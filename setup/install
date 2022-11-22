@@ -12,24 +12,31 @@ echo '### Install ###'
 echo ' '
 #cd `dirname $0`
 
-ver='py'
-ver2='py2'
-ver3='py3'
+ver='version-default'
+ver2='version-2'
+ver3='version-3'
 
-export PATH=$HOME/Pydo/pydoenv/bin:$PATH
-export PATH=$HOME/Pydo:$PATH
 
-if [ -f /usr/bin/sudo ]; then
-  #sudo ln -si ~/Pydo/pydo /usr/local/bin
-  sudo cp ~/Pydo/pydo /usr/bin/
-elif [ -e /usr/bin/sudo ]; then
-  cp ~/Pydo/pydo /usr/bin/
-  #ln -si ~/Pydo/pydo /usr/local/bin
-else
-  echo ' '
-  echo '### wait a next update ###'
-  echo ' '
-  exit 1
+
+export PATH=$HOME/PyBox/pydoenv/bin:$PATH
+export PATH=$HOME/PyBox:$PATH
+
+if [ -f /usr/local/Homebrew ]; then
+  if [ -f /usr/bin/sudo ]; then
+    #sudo ln -si ~/PyBox/pybox /usr/local/bin
+    sudo cp ~/PyBox/pybox /usr/bin/
+
+  elif [ -e /usr/bin/sudo ]; then
+    cp ~/PyBox/pybox /usr/bin/
+    #ln -si ~/PyBox/pybox /usr/local/bin
+  else
+    echo ' '
+    echo '### wait a next update ###'
+    echo ' '
+    exit 1
+  fi
+elif [ -e /usr/local/Homebrew ]; then
+  echo ' This PC is macOS '
 fi
 
 ### python2 has already finished support for pip ###
@@ -40,12 +47,12 @@ fi
 #    
 #    if [ -f /usr/bin/sudo ]; then
 #      sudo apt install python2-venv python2-pip
-#      python2 -m venv pydoenv
+#      python2 -m venv pyboxenv
 #      echo '### complete ###'
 #      exit 1
 #    elif [ -e /usr/bin/sudo ]; then
 #      apt install python2-venv python2-pip
-#      python2 -m venv pydoenv
+#      python2 -m venv pyboxenv
 #      echo '### complete ###'
 #      exit 1
 #    else
@@ -76,21 +83,41 @@ elif [ $1 == ${ver3} ]; then
     
     if [ -f /usr/bin/sudo ]; then
 
-      sudo apt-get install -y python3-venv python3-pip
-      echo ' '
-      echo 'Maiking.......'
-      echo ' '
-      python3 -m venv pydoenv ~/Pydo/pydoenv
+      if [ -e /usr/local/Homebrew ]; then 
 
+        echo ' '
+        echo 'Maiking.......'
+        echo ' '
+        python3 -m venv pyboxenv ~/PyBox/pyboxenv
+
+
+      elif [ -f /usr/local/Homebrew ]; then
+
+        sudo apt-get install -y python3-venv python3-pip
+        echo ' '
+        echo 'Maiking.......'
+        echo ' '
+        python3 -m venv pyboxenv ~/PyBox/pyboxenv
+      fi
       exit 1
 
     elif [ -e /usr/bin/sudo ]; then
-      apt-get install -y python3-venv python3-pip
-      echo ' '
-      echo 'Maiking.......'
-      echo ' '
-      python3 -m venv pydoenv ~/Pydo/pydoenv
 
+      if [ -e /usr/local/Homebrew ]; then 
+
+        echo ' '
+        echo 'Maiking.......'
+        echo ' '
+        python3 -m venv pyboxenv ~/PyBox/pyboxenv
+
+
+      elif [ -f /usr/local/Homebrew ]; then
+        apt-get install -y python3-venv python3-pip
+        echo ' '
+        echo 'Maiking.......'
+        echo ' '
+        python3 -m venv pyboxenv ~/PyBox/pyboxenv
+      fi
       exit 1
 
     else
@@ -110,18 +137,31 @@ elif [ $1 == ${ver3} ]; then
     echo ' '
     exit 1
   fi
+
+
 if [ $1 == ${ver} ]; then
   if [ -f /usr/bin/python ]; then
     if [ -f /usr/bin/sudo ]; then
-      sudo apt-get install python-venv python-pip
-      echo 'Maiking.......'
-      python -m venv pydoenv ~/Pydo/pydoenv
 
+      if [ -f /usr/local/Homebrew ]; then
+        python -m venv pyboxenv ~/PyBox/pyboxenv
+
+      elif [ -e /usr/local/Homebrew ]; then
+        sudo apt-get install python-venv python-pip
+        echo 'Maiking.......'
+        python -m venv pyboxenv ~/PyBox/pyboxenv
+      fi
       exit 1
     elif [ -e /usr/bin/sudo ]; then
-      apt install python-venv python-pip
-      echo 'Maiking.......'
-      python -m venv pydoenv #~/Pydo/pydoenv
+
+      if [ -f /usr/local/Homebrew ]; then
+        python -m venv pyboxenv ~/PyBox/pyboxenv
+
+      elif [ -f /usr/local/Homebrew ]; then
+        apt install python-venv python-pip
+        echo 'Maiking.......'
+      fi
+      python -m venv pyboxenv #~/PyBox/pyboxenv
 
       exit 1
     else
