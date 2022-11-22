@@ -14,13 +14,13 @@ Currently it only works in the home directory, so please place it as follows
 
 A tool that allows you to run venv, which creates a virtual environment for Python to run on your system, with sudo[superuser do / substitute user do] privileges and without being in the active state.
 
-At present, it creates its own virtual environment. Also, it can only handle one virtual environment and macOS too.
+At present, it creates its own virtual environment. Also, it can only handle one virtual environment.
 
 ## Dependencies
 DebianベースのLinuxディストリビューション(macOS含め)でしか動かない。
 また、以下にあるPythonの機能、ライブラリに依存してある。
 
-It only runs on Debian-based Linux distributions.
+It only runs on Debian-based Linux distributions and macOS too.
 It also depends on the Python features and libraries listed below.
 
 - Python >> [venv](https://docs.python.org/ja/3/library/venv.html)
@@ -38,17 +38,19 @@ We welcome anyone who is willing to develop with us to make PyBox easier to use.
 
 Give a permission
 
-#### Debian GNU/Linux
 ```
 chmod +x ~/PyBox/setup.py ~/PyBox/pybox ~/PyBox/setup/install ~/PyBox/setup/uninstall
 ```
 
 #### macOS
-Apped to .bash_profile
+もし、macOSのパソコンでしたら .bash_profile に下記を書き加えてください
+If your computer's OS is macOS, Apped to .bash_profile
 ```
 export PATH=$HOME/PyBox/pyboxenv/bin:$PATH
 export PATH=$HOME/PyBox:$PATH
 ```
+
+## setup.py options
 
 Install
 ```command
@@ -62,11 +64,6 @@ python3 ~/PyBox/setup.py uninstall
 or
 python ~/PyBox/setup.py uninstall
 ```
-
-## Examples
-
-Setup.py arguments
-
 Check version of pyboxenv
 ```command
 python3 ~/PyBox/setup.py status
@@ -81,8 +78,9 @@ or
 python ~/PyBox/setup.py manual
 ```
 
+## Examples
 
-
+Setup.py arguments
 
 RUN
 ```command
@@ -92,6 +90,11 @@ pybox run file.py        #run python file
 Using pip
 ```command
 pybox run -m pip freeze          #use pip
+```
+
+Interactive mode
+```command
+pybox interactive
 ```
 
 ## Argument
@@ -140,8 +143,8 @@ commands
     pybox run -m pip freeze
 
 
-[ exec ] 
+[ Interactive ] 
 
     example
 
-    pybox exec
+    pybox interactive 
