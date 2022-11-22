@@ -44,15 +44,15 @@ chmod 755 ~/PyBox/setup.py ~/PyBox/pybox ~/PyBox/setup/install ~/PyBox/setup/uni
 
 Install
 ```command
-python3 setup.py install version-3
+python3 ~/PyBox/setup.py install version-3
 or
-python setup.py install version-default
+python ~/PyBox/setup.py install version-default
 ```
 uninstall 
 ```command
-python3 setup.py uninstall
+python3 ~/PyBox/setup.py uninstall
 or
-python setup.py uninstall
+python ~/PyBox/setup.py uninstall
 ```
 
 ## Examples
@@ -61,16 +61,16 @@ Setup.py arguments
 
 Check version of pyboxenv
 ```command
-python3 setup.py status
+python3 ~/PyBox/setup.py status
 or
-python setup.py status
+python ~/PyBox/setup.py status
 ```
 
 See manuals
 ```command
-python3 setup.py manual
+python3 ~/PyBox/setup.py manual
 or
-python setup.py manual
+python ~/PyBox/setup.py manual
 ```
 
 
