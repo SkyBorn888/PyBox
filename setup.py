@@ -16,18 +16,26 @@ manual = 'manual'
 def Install(ver2, ver3):
 
     if args[2] == ver2:
-            print('python2 setup')
-            os.system('~/PyBox/setup/install version-2')
-
+        print('python2 setup')
+        os.system('~/PyBox/setup/install version-2')
+        print('\n ### Done ### \n')
+        sys.exit()
     elif args[2] == ver3:
-            print('python3 setup')
-            os.system('~/PyBox/setup/install version-3')
+        print('python3 setup')
+        os.system('~/PyBox/setup/install version-3')
+        print('\n ### Done ### \n')
+        sys.exit()
     elif args[2] == ver:
-            print('python setup')
-            os.system('~/PyBox/setup/install version-default')
+        print('python setup')
+        os.system('~/PyBox/setup/install version-default')
+        print('\n ### Done ### \n')
+        sys.exit()
+    else:
+        Manual()
+        print(" ")
+        print("###### Not found " + str(args[2]) + " options ######")
+        sys.exit()
 
-    print('\n ### Done ### \n')
-    sys.exit()
 
 
 ### Uninstall
