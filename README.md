@@ -1,7 +1,9 @@
 # PyBox
 
 現状ホームディレクトリにしか作動しないので以下の通りに配置してください
+
 Currently it only works in the home directory, so please place it as follows
+
 ### /home/username/PyBox/README.md
 
 
