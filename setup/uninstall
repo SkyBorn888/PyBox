@@ -27,5 +27,8 @@ elif [ ! $? -eq 0 ]; then
 else
     echo '### complete ###'
 fi
-
+echo ' '
+echo ' If your computer is macOS, You need delete environment variable'
+echo ' Edit .bash_profile and Delete environment variables related to pybox'
+echo ' '
 echo '### complete ###'

@@ -42,7 +42,7 @@ commands
     
     example
     
-    PyBox run file.py
+    pybox run file.py
 
 options
 [ -p ] <- you can use pip
@@ -54,3 +54,4 @@ options
     example 
     
     pybox -p freeze
+

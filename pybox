@@ -21,44 +21,87 @@ echo '### Welcome to PyBox ###'
 echo ' '
 #cd `dirname $1`
 
-rt1="-p"
-rt2="run"
-path=$(cd $(dirname $2); pwd)/$(basename $2) #we can know path 
+rt1="run"
+rt2="exec"
+rt3="version"
+#path=$(cd $(dirname $2); pwd)/$(basename $2) #we can know path 
 
 
 
 
 if [ $1 == $rt1 ]; then # pip can use pip 
 
-	echo ' '
-	echo 'Please wait.....'
-	echo ' '
+	if [ -f ~/PyBox/pyboxenv/bin/python ]; then
 
-	which sudo >/dev/null 2>&1
-	if [ $? -eq 0 ]; then
-		sudo ~/PyBox/pyboxenv/bin/python -m pip  ${@:2} 	#read from second arguments
+		if [ -f /usr/local/Homebrew ]; then
+
+			which sudo >/dev/null 2>&1
+
+			if [ $? -eq 0 ]; then
+
+				sudo ~/PyBox/pyboxenv/bin/python ${@:2} 	#read from second arguments
+				echo ' '
+				echo '### Done ###'
+				echo ' '
+			elif [ ! $? -eq 0 ]; then
+				~/PyBox/pyboxenv/bin/python ${@:2}
+				echo ' '
+				echo '### Done ###'
+				echo ' '
+			fi
+		elif [ -e /usr/local/Homebrew ]; then
+				~/PyBox/pyboxenv/bin/python ${@:2}
+				echo ' '
+				echo '### Done ###'
+				echo ' '
+		fi
+	else
+		echo "pyboxenv is not found"
 		echo ' '
-		echo '### Done ###'
-		echo ' '
-	elif [ ! $? -eq 0 ]; then
-		~/PyBox/pyboxenv/bin/python -m pip ${@:2}
-		echo ' '
-		echo '### Done ###'
-		echo ' '
+		echo "You need run ' python ~/PyBox/setup.py install version-default '"
+		exit 1
 	fi
-
 
 
 elif [ $1 == $rt2 ]; then
 
-	which sudo >/dev/null 2>&1
-	if [ $? -eq 0 ]; then
-		sudo ~/PyBox/pyboxenv/bin/python  $path
-	elif [ ! $? -eq 0 ]; then
-		~/PyBox/pyboxenv/bin/python $path
+	if [ -f ~/PyBox/pyboxenv/bin/python ]; then
+
+		if [ -f /usr/local/Homebrew ]; then
+
+			which sudo >/dev/null 2>&1
+			if [ $? -eq 0 ]; then
+				sudo ~/PyBox/pyboxenv/bin/python #$path
+				echo ' '
+				echo '### Done ###'
+				echo ' '
+				exit 1
+			elif [ ! $? -eq 0 ]; then
+				~/PyBox/pyboxenv/bin/python #$path
+				echo ' '
+				echo '### Done ###'
+				echo ' '
+				exit 1
+			fi
+			echo ' '
+			echo '### Done ###'
+			echo ' '
+
+		elif [ -e /usr/local/Homebrew ]; then
+				~/PyBox/pyboxenv/bin/python #$path
+				echo ' '
+				echo '### Done ###'
+				echo ' '
+				exit 1
+				
+		fi
+
+	else
+		echo "pyboxenv is not found"
+		echo ' '
+		echo "You need run ' python ~/PyBox/setup.py install version-default '"
 		exit 1
 	fi
-
 else
 	cat ~/PyBox/manual.txt
 fi

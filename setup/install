@@ -16,22 +16,27 @@ ver='version-default'
 ver2='version-2'
 ver3='version-3'
 
+
+
 export PATH=$HOME/PyBox/pydoenv/bin:$PATH
 export PATH=$HOME/PyBox:$PATH
-chmod 755 ~/PyBox/setup.py ~/PyBox/pybox ~/PyBox/setup/install ~/PyBox/setup/uninstall
 
-if [ -f /usr/bin/sudo ]; then
-  #sudo ln -si ~/PyBox/pybox /usr/local/bin
-  sudo cp ~/PyBox/pybox /usr/bin/
+if [ -f /usr/local/Homebrew ]; then
+  if [ -f /usr/bin/sudo ]; then
+    #sudo ln -si ~/PyBox/pybox /usr/local/bin
+    sudo cp ~/PyBox/pybox /usr/bin/
 
-elif [ -e /usr/bin/sudo ]; then
-  cp ~/PyBox/pybox /usr/bin/
-  #ln -si ~/PyBox/pybox /usr/local/bin
-else
-  echo ' '
-  echo '### wait a next update ###'
-  echo ' '
-  exit 1
+  elif [ -e /usr/bin/sudo ]; then
+    cp ~/PyBox/pybox /usr/bin/
+    #ln -si ~/PyBox/pybox /usr/local/bin
+  else
+    echo ' '
+    echo '### wait a next update ###'
+    echo ' '
+    exit 1
+  fi
+elif [ -e /usr/local/Homebrew ]; then
+  echo ' This PC is macOS '
 fi
 
 ### python2 has already finished support for pip ###
@@ -78,7 +83,7 @@ elif [ $1 == ${ver3} ]; then
     
     if [ -f /usr/bin/sudo ]; then
 
-      if [ -f /usr/local/Homebrew ]; then 
+      if [ -e /usr/local/Homebrew ]; then 
 
         echo ' '
         echo 'Maiking.......'
@@ -98,7 +103,7 @@ elif [ $1 == ${ver3} ]; then
 
     elif [ -e /usr/bin/sudo ]; then
 
-      if [ -f /usr/local/Homebrew ]; then 
+      if [ -e /usr/local/Homebrew ]; then 
 
         echo ' '
         echo 'Maiking.......'
@@ -141,7 +146,7 @@ if [ $1 == ${ver} ]; then
       if [ -f /usr/local/Homebrew ]; then
         python -m venv pyboxenv ~/PyBox/pyboxenv
 
-      elif [ -f /usr/local/Homebrew ]; then
+      elif [ -e /usr/local/Homebrew ]; then
         sudo apt-get install python-venv python-pip
         echo 'Maiking.......'
         python -m venv pyboxenv ~/PyBox/pyboxenv

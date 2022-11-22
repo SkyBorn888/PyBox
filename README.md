@@ -14,10 +14,10 @@ Currently it only works in the home directory, so please place it as follows
 
 A tool that allows you to run venv, which creates a virtual environment for Python to run on your system, with sudo[superuser do / substitute user do] privileges and without being in the active state.
 
-At present, it creates its own virtual environment. Also, it can only handle one virtual environment.
+At present, it creates its own virtual environment. Also, it can only handle one virtual environment and macOS too.
 
 ## Dependencies
-DebianベースのLinuxディストリビューションでしか動かない。
+DebianベースのLinuxディストリビューション(macOS含め)でしか動かない。
 また、以下にあるPythonの機能、ライブラリに依存してある。
 
 It only runs on Debian-based Linux distributions.
@@ -37,9 +37,17 @@ We welcome anyone who is willing to develop with us to make PyBox easier to use.
 インストールを始める前にファイルの権限を与えてください
 
 Give a permission
-```
-chmod 755 ~/PyBox/setup.py ~/PyBox/pybox ~/PyBox/setup/install ~/PyBox/setup/uninstall
 
+#### Debian GNU/Linux
+```
+chmod +x ~/PyBox/setup.py ~/PyBox/pybox ~/PyBox/setup/install ~/PyBox/setup/uninstall
+```
+
+#### macOS
+Apped to .bash_profile
+```
+export PATH=$HOME/PyBox/pyboxenv/bin:$PATH
+export PATH=$HOME/PyBox:$PATH
 ```
 
 Install
@@ -83,7 +91,7 @@ pybox run file.py        #run python file
 
 Using pip
 ```command
-pybox -p freeze          #use pip
+pybox run -m pip freeze          #use pip
 ```
 
 ## Argument
@@ -124,13 +132,16 @@ commands
     
     pybox run file.py
 
-options
-[ -p ] <- you can use pip
-
     Second argument
     - same pip arguments
 
-
     example 
     
-    pybox -p freeze
+    pybox run -m pip freeze
+
+
+[ exec ] 
+
+    example
+
+    pybox exec
