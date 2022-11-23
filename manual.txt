@@ -13,11 +13,12 @@ chmod 755 ~/PyBox/setup.py ~/PyBox/pybox ~/PyBox/setup/install ~/PyBox/setup/uni
 python3 setup.py :
 
 First argument
+
 [ install ] <- Start install
 
     Second argument
-    [ py3 ] <- python version 3.~
-    [ py ] <- python <- using default python version
+    [ version-3 ] <- python version 3.~
+    [ version-default ] <- python <- using default python version
     * Python has already finished support for pip. So you can't use python2
 
 [ uninstall] <- Start uninstall
@@ -30,7 +31,7 @@ First argument
 
 #### About PyBox commands ####
 
-PyBox commands[-p, run]  options[]:
+pybox commands[interactive, run]  options[]:
 
 
 commands
@@ -44,13 +45,11 @@ commands
     
     pybox run file.py
 
-options
-[ -p ] <- you can use pip
-
     Second argument
     - same pip arguments
 
-
     example 
     
-    pybox -p interactive 
+    pybox run -m pip freeze
+
+

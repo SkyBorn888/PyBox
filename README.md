@@ -42,14 +42,16 @@ Give a permission
 chmod +x ~/PyBox/setup.py ~/PyBox/pybox ~/PyBox/setup/install ~/PyBox/setup/uninstall
 ```
 
-#### macOS
-もし、macOSのパソコンでしたら .bash_profile に下記を書き加えてください
+### Set Environment variable
 
-If your computer's OS is macOS, Apped to .bash_profile
+.bash_profile or .bashrc に下記を書き加えてください
+
+Apped to .bash_profile or .bashrc
 ```
 export PATH=$HOME/PyBox/pyboxenv/bin:$PATH
 export PATH=$HOME/PyBox:$PATH
 ```
+
 
 ## setup.py options
 
@@ -122,7 +124,7 @@ commands
 
 ##############################################################################
 
-pybox commands[-p, run]  options[]:
+pybox commands[interactive, run]  options[]:
 
 
 commands
@@ -142,10 +144,3 @@ commands
     example 
     
     pybox run -m pip freeze
-
-
-[ Interactive ] 
-
-    example
-
-    pybox interactive 

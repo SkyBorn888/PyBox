@@ -61,7 +61,9 @@ def Status():
         print("Please wait a update")
         
 def Manual(): 
-    f = open('manual.txt', 'r', encoding='UTF-8')
+    #cwd = os.getcwd()
+    cwd = os.path.expanduser("~/PyBox") 
+    f = open('{}/manual.txt'.format(cwd), 'r', encoding='UTF-8')
     words = f.read() ##feature/Update-2
     print(words)
     f.close()
