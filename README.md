@@ -42,7 +42,7 @@ Give a permission
 chmod +x ~/PyBox/setup.py ~/PyBox/pybox ~/PyBox/setup/install ~/PyBox/setup/uninstall
 ```
 
-#### Set Environment variable
+### Set Environment variable
 
 .bash_profile or .bashrc に下記を書き加えてください
 
@@ -51,6 +51,7 @@ Apped to .bash_profile or .bashrc
 export PATH=$HOME/PyBox/pyboxenv/bin:$PATH
 export PATH=$HOME/PyBox:$PATH
 ```
+
 
 ## setup.py options
 
@@ -143,10 +144,3 @@ commands
     example 
     
     pybox run -m pip freeze
-
-
-[ Interactive ] 
-
-    example
-
-    pybox interactive   
