@@ -102,7 +102,10 @@ elif [ $1 == $rt2 ]; then
 	else
 		echo "pyboxenv is not found"
 		echo ' '
-		echo "You need run ' python ~/PyBox/setup.py install version-default '"
+		echo "You need run"
+		echo " ' python ~/PyBox/setup.py install version-default ' or ' version-3 ' "
+		echo " or "
+		echo " ' python3 ~/PyBox/setup.py install version-default ' or ' version-3 '"
 		exit 1
 	fi
 else
