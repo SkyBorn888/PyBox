@@ -10,10 +10,10 @@
 
 
 ##need a seconds argument
-if [ -z $2 ]; then
-	cat ~/PyBox/manual.txt
-	exit 1
-fi
+#if [ -z $2 ]; then
+#	cat ~/PyBox/manual.txt
+#	exit 1
+#fi
 
 
 echo ' '
@@ -22,7 +22,7 @@ echo ' '
 #cd `dirname $1`
 
 rt1="run"
-rt2="exec"
+rt2="interactive" # <- dont use this command
 rt3="version"
 #path=$(cd $(dirname $2); pwd)/$(basename $2) #we can know path 
 
@@ -33,7 +33,7 @@ if [ $1 == $rt1 ]; then # pip can use pip
 
 	if [ -f ~/PyBox/pyboxenv/bin/python ]; then
 
-		if [ -f /usr/local/Homebrew ]; then
+		if [ -f /bin/apt-get ]; then
 
 			which sudo >/dev/null 2>&1
 
@@ -58,7 +58,10 @@ if [ $1 == $rt1 ]; then # pip can use pip
 	else
 		echo "pyboxenv is not found"
 		echo ' '
-		echo "You need run ' python ~/PyBox/setup.py install version-default '"
+		echo "You need run"
+		echo " ' python ~/PyBox/setup.py install version-default ' or ' version-3 ' "
+		echo " or "
+		echo " ' python3 ~/PyBox/setup.py install version-default ' or ' version-3 '"
 		exit 1
 	fi
 
@@ -67,7 +70,7 @@ elif [ $1 == $rt2 ]; then
 
 	if [ -f ~/PyBox/pyboxenv/bin/python ]; then
 
-		if [ -f /usr/local/Homebrew ]; then
+		if [ -f /bin/apt-get ]; then
 
 			which sudo >/dev/null 2>&1
 			if [ $? -eq 0 ]; then

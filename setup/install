@@ -3,12 +3,12 @@
 ### Error check
 
 #set -x
-#function error_handler() {
-#  echo "ERROR" >&2
-#  exit 1
-#}
+function error_handler() {
+  echo "ERROR" >&2
+  exit 1
+}
 echo ' '
-echo '### Install ###'
+echo ' ### Install ###'
 echo ' '
 #cd `dirname $0`
 
@@ -71,19 +71,19 @@ fi
 #    exit 1
 #  fi
 
-if [ $1 == ${ver2} ]; then
+if [ $1 = ${ver2} ]; then
 
   echo ' '
   echo 'python2 has already finished support for pip'
   echo ' '
 
-elif [ $1 == ${ver3} ]; then
+elif [ $1 = ${ver3} ]; then
 
   if [ -f /usr/bin/python3 ]; then
-    
+
     if [ -f /usr/bin/sudo ]; then
 
-      if [ -e /usr/local/Homebrew ]; then 
+      if [ -e /usr/local/Homebrew ]; then
 
         echo ' '
         echo 'Maiking.......'
@@ -91,7 +91,7 @@ elif [ $1 == ${ver3} ]; then
         python3 -m venv pyboxenv ~/PyBox/pyboxenv
 
 
-      elif [ -f /usr/local/Homebrew ]; then
+      elif [ -f /bin/apt-get ]; then
 
         sudo apt-get install -y python3-venv python3-pip
         echo ' '
@@ -103,7 +103,7 @@ elif [ $1 == ${ver3} ]; then
 
     elif [ -e /usr/bin/sudo ]; then
 
-      if [ -e /usr/local/Homebrew ]; then 
+      if [ -e /usr/local/Homebrew ]; then
 
         echo ' '
         echo 'Maiking.......'
