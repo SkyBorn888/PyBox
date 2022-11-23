@@ -21,20 +21,22 @@ ver3='version-3'
 export PATH=$HOME/PyBox/pydoenv/bin:$PATH
 export PATH=$HOME/PyBox:$PATH
 
-if [ -f /usr/local/Homebrew ]; then
-  if [ -f /usr/bin/sudo ]; then
-    #sudo ln -si ~/PyBox/pybox /usr/local/bin
-    sudo cp ~/PyBox/pybox /usr/bin/
+if [ -f /bin/apt-get ]; then
+  echo ' This PC is Linux '
 
-  elif [ -e /usr/bin/sudo ]; then
-    cp ~/PyBox/pybox /usr/bin/
+  #if [ -f /usr/bin/sudo ]; then
+    #sudo ln -si ~/PyBox/pybox /usr/local/bin
+  #  sudo cp ~/PyBox/pybox /usr/bin/
+
+  #elif [ -e /usr/bin/sudo ]; then
+  #  cp ~/PyBox/pybox /usr/bin/
     #ln -si ~/PyBox/pybox /usr/local/bin
-  else
-    echo ' '
-    echo '### wait a next update ###'
-    echo ' '
-    exit 1
-  fi
+  #else
+  #  echo ' '
+  #  echo '### wait a next update ###'
+  #  echo ' '
+  #  exit 1
+  #fi
 elif [ -e /usr/local/Homebrew ]; then
   echo ' This PC is macOS '
 fi
@@ -139,8 +141,10 @@ elif [ $1 = ${ver3} ]; then
   fi
 
 
-if [ $1 == ${ver} ]; then
+elif [ $1 = ${ver} ]; then
+
   if [ -f /usr/bin/python ]; then
+
     if [ -f /usr/bin/sudo ]; then
 
       if [ -f /usr/local/Homebrew ]; then
@@ -171,14 +175,50 @@ if [ $1 == ${ver} ]; then
       exit 1
     fi
 
-  elif [ -e /usr/bin/python ]; then
-    echo ' '
-    echo 'python is not defind'
-    echo ' '
-    exit 1
+  elif [ -f /usr/bin/python3 ]; then
+
+    if [ -f /usr/bin/sudo ]; then
+
+      if [ -e /usr/local/Homebrew ]; then
+
+        echo ' '
+        echo 'Maiking.......'
+        echo ' '
+        python3 -m venv pyboxenv ~/PyBox/pyboxenv
+
+
+      elif [ -f /bin/apt-get ]; then
+
+        sudo apt-get install -y python3-venv python3-pip
+        echo ' '
+        echo 'Maiking.......'
+        echo ' '
+        python3 -m venv pyboxenv ~/PyBox/pyboxenv
+      fi
+      exit 1
+
+    elif [ -e /usr/bin/sudo ]; then
+
+      if [ -e /usr/local/Homebrew ]; then
+
+        echo ' '
+        echo 'Maiking.......'
+        echo ' '
+        python3 -m venv pyboxenv ~/PyBox/pyboxenv
+
+
+      elif [ -f /usr/local/Homebrew ]; then
+        apt-get install -y python3-venv python3-pip
+        echo ' '
+        echo 'Maiking.......'
+        echo ' '
+        python3 -m venv pyboxenv ~/PyBox/pyboxenv
+      fi
+      exit 1
+    fi
   else
     echo ' '
-    echo '### wait a next update ###'
+    echo 'python is not defind'
     echo ' '
     exit 1
   fi
