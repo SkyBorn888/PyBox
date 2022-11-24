@@ -17,10 +17,10 @@ A tool that allows you to run venv, which creates a virtual environment for Pyth
 At present, it creates its own virtual environment. Also, it can only handle one virtual environment.
 
 ## Dependencies
-DebianベースのLinuxディストリビューション(macOS含め)でしか動かない。
+DebianベースのLinuxディストリビューション(macOS含め)活、Bashが入ってる環境でしか動かない。
 また、以下にあるPythonの機能、ライブラリに依存してある。
 
-It only runs on Debian-based Linux distributions and macOS too.
+It only runs on Debian-based Linux distributions and macOS too, Include Those needs Bash.
 It also depends on the Python features and libraries listed below.
 
 - Python >> [venv](https://docs.python.org/ja/3/library/venv.html)
